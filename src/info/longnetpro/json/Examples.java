@@ -122,5 +122,6 @@ public class Examples {
         i = s.charAt(1);
         System.out.println(s.length());
         System.out.println((char)i);
+        System.out.println("Test");
     }
 }
