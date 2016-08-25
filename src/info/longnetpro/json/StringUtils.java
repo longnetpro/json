@@ -1,7 +1,6 @@
 package info.longnetpro.json;
 
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 public class StringUtils {
 	public static String toUTF8String(String string) {
@@ -33,31 +32,6 @@ public class StringUtils {
 
 	public static String toHexString(char ch) {
 		return toHexString(ch, false);
-	}
-
-	public static String toSqlList(List<?> list, boolean trimmed) {
-		String sql = "";
-		if (list == null)
-			return sql;
-		for (Object obj : list) {
-			String s = obj == null ? "" : obj.toString();
-			if (trimmed)
-				s = s.trim();
-			if (obj instanceof String) {
-				s = "'" + s + "'";
-			} else if (obj instanceof Number || obj instanceof java.lang.Number) {
-				;
-			} else {
-				s = "";
-			}
-			if (!s.isEmpty())
-				sql += s + ",";
-		}
-		if (!sql.isEmpty()) {
-			sql = sql.substring(0, sql.length() - 1);
-			sql = "(" + sql + ")";
-		}
-		return sql;
 	}
 
 	public static String repeat(String text, int repeat) {
