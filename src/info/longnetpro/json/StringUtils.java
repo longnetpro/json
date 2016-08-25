@@ -116,7 +116,7 @@ public class StringUtils {
 
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < texts.length - 1; i++) {
-			sb.append(texts[0]);
+			sb.append(texts[i]);
 			sb.append(delimiter);
 		}
 		sb.append(texts[texts.length - 1]);
