@@ -23,15 +23,6 @@ public class JsonString extends JsonType {
 		return s;
 	}
 
-	public String toJsonPointerReference() {
-		String ref = value;
-		ref = ref.replaceAll("~", "~0");
-		ref = ref.replaceAll("/", "~1");
-		ref = JsonString.create(ref).toJsonString();
-		ref = ref.substring(1, ref.length() - 1);
-		return ref;
-	}
-
 	public String toString() {
 		return value;
 	}

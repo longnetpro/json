@@ -55,7 +55,6 @@ public class JsonPointer implements Serializable {
 		}
 
 		String ref = reference;
-		System.out.println(ref);
 		if (isJsonFormat) {
 			try {
 				ref = JsonUtils.parseJsonString('"' + reference + '"', false).toString();
@@ -76,6 +75,15 @@ public class JsonPointer implements Serializable {
 
 	public static String[] evaluteReference(String reference) throws JsonPointerException {
 		return evaluteReference(reference, false);
+	}
+	
+	public static String createReference(String value) {
+		String ref = value;
+		ref = ref.replaceAll("~", "~0");
+		ref = ref.replaceAll("/", "~1");
+		ref = JsonString.create(ref).toJsonString();
+		ref = ref.substring(1, ref.length() - 1);
+		return ref;
 	}
 
 	public JsonType resolve() throws JsonPointerException {
