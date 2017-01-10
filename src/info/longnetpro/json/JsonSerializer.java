@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
+import info.longnetpro.json.util.StringUtils;
+
 public class JsonSerializer {
 	private Writer out = null;
 	private JsonFormat format;

@@ -4,6 +4,8 @@ import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
 
+import info.longnetpro.json.util.StringUtils;
+
 public class JsonParser {
 	private static final byte NONE = 0;
 	// private static final byte ANY_VALUE = 7;

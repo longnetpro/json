@@ -1,4 +1,4 @@
-package info.longnetpro.json;
+package info.longnetpro.json.util;
 
 import java.io.UnsupportedEncodingException;
 
