@@ -91,16 +91,26 @@ public class JsonUtils {
 		js.serialize(jsonObj, out);
 	}
 
-	public static void print(JsonType jsonObj, JsonFormat format) throws IOException {
+	public static String outputString(JsonType jsonObj, JsonFormat format) throws IOException {
 		JsonSerializer js = new JsonSerializer(format);
 		js.serialize(jsonObj);
-		System.out.println(js.getOut().toString());
+		return js.getOut().toString();
+	}
+
+	public static String outputString(JsonType jsonObj) throws IOException {
+		JsonSerializer js = new JsonSerializer();
+		js.serialize(jsonObj);
+		return js.getOut().toString();
+	}
+
+	public static void print(JsonType jsonObj, JsonFormat format) throws IOException {
+		String outString = outputString(jsonObj, format);
+		System.out.println(outString);
 	}
 
 	public static void print(JsonType jsonObj) throws IOException {
-		JsonSerializer js = new JsonSerializer();
-		js.serialize(jsonObj);
-		System.out.println(js.getOut().toString());
+		String outString = outputString(jsonObj);
+		System.out.println(outString);
 	}
 
 	public static void outputFile(JsonType jsonObj, File file, JsonFormat format) throws IOException {
